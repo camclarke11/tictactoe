@@ -28,14 +28,14 @@ npm run preview
    - Node.js version env var: set `NODE_VERSION=22`
 5. Click `Save and Deploy`.
 
-## Connect camlc.dev
+## Connect your subdomain
 
 1. Open the new Pages project.
 2. Go to `Custom domains` -> `Set up a custom domain`.
-3. Add `camlc.dev` (and optionally `www.camlc.dev`).
+3. Add `ttt.camlc.dev`.
 4. Cloudflare will create/verify the DNS records and issue SSL automatically.
 
 ## Notes
 
-- `public/_redirects` includes `/* /index.html 200` so direct URL loads work correctly for SPA routes.
+- If using Wrangler deploy, do not add a `_redirects` SPA rule. Wrangler's SPA handling already covers route fallback.
 - PWA assets and service worker are generated during `npm run build`.
