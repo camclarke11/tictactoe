@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+  <defs>
+    <linearGradient id="ttt-bg" x1="0" y1="-960" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#18233c" />
+      <stop offset="1" stop-color="#0f172b" />
+    </linearGradient>
+  </defs>
+  <rect x="80" y="-880" width="800" height="800" rx="190" fill="url(#ttt-bg)" />
+  <path
+    d="M320-320H200q-17 0-28.5-11.5T160-360q0-17 11.5-28.5T200-400h120v-160H200q-17 0-28.5-11.5T160-600q0-17 11.5-28.5T200-640h120v-120q0-17 11.5-28.5T360-800q17 0 28.5 11.5T400-760v120h160v-120q0-17 11.5-28.5T600-800q17 0 28.5 11.5T640-760v120h120q17 0 28.5 11.5T800-600q0 17-11.5 28.5T760-560H640v160h120q17 0 28.5 11.5T800-360q0 17-11.5 28.5T760-320H640v120q0 17-11.5 28.5T600-160q-17 0-28.5-11.5T560-200v-120H400v120q0 17-11.5 28.5T360-160q-17 0-28.5-11.5T320-200v-120Zm80-80h160v-160H400v160Z"
+    fill="#dce7ff"
+  />
+  <path d="M250-705 315-640M315-705 250-640" stroke="#7ec5ff" stroke-linecap="round" stroke-width="52" />
+  <circle cx="690" cy="-270" r="72" fill="none" stroke="#ff9dcb" stroke-width="52" />
+</svg>

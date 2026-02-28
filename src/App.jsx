@@ -105,14 +105,8 @@ function App() {
     setActivePlayer((current) => (current === 'X' ? 'O' : 'X'))
   }
 
-  const resetGame = () => {
-    setBoard([...EMPTY_BOARD])
-    setXQueue([])
-    setOQueue([])
-    setActivePlayer('X')
-    setWinner(null)
-    setWinningLine([])
-    setShowRematchCue(false)
+  const resetScores = () => {
+    setScores({ X: 0, O: 0 })
   }
 
   return (
@@ -149,8 +143,8 @@ function App() {
           Tap to start next round
         </p>
 
-        <button type="button" className="reset-button" onClick={resetGame}>
-          New Round
+        <button type="button" className="reset-button" onClick={resetScores}>
+          Reset Scores
         </button>
       </section>
     </main>

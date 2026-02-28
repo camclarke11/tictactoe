@@ -1,16 +1,41 @@
-# React + Vite
+# Infinite Tic-Tac-Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite Tic-Tac-Toe app with PWA support.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Deploy to Cloudflare Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Push this repo to GitHub.
+2. In Cloudflare Dashboard, go to `Workers & Pages` -> `Create` -> `Pages` -> `Connect to Git`.
+3. Select this GitHub repo.
+4. Use these build settings:
+   - Framework preset: `Vite`
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Node.js version env var: set `NODE_VERSION=22`
+5. Click `Save and Deploy`.
+
+## Connect camlc.dev
+
+1. Open the new Pages project.
+2. Go to `Custom domains` -> `Set up a custom domain`.
+3. Add `camlc.dev` (and optionally `www.camlc.dev`).
+4. Cloudflare will create/verify the DNS records and issue SSL automatically.
+
+## Notes
+
+- `public/_redirects` includes `/* /index.html 200` so direct URL loads work correctly for SPA routes.
+- PWA assets and service worker are generated during `npm run build`.
