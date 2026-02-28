@@ -1,0 +1,164 @@
+.app {
+  min-height: 100svh;
+  padding: 1rem 0.85rem;
+  display: grid;
+  place-items: center;
+}
+
+.game-shell {
+  width: min(100%, 23rem);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.status-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #2b364e;
+  border-radius: 0.7rem;
+  background: linear-gradient(180deg, #151c2f, #101726);
+}
+
+.turn-status,
+.score-text {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d9e6ff;
+}
+
+.turn-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.turn-dot {
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px #0d1322;
+}
+
+.turn-dot.is-x {
+  background: #7ec5ff;
+}
+
+.turn-dot.is-o {
+  background: #ff9dcb;
+}
+
+.score-text {
+  color: #b8c7e8;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.square {
+  border: 2px solid #2d3344;
+  border-radius: 0.75rem;
+  background: #111625;
+  aspect-ratio: 1 / 1;
+  min-height: 4.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.square:hover:not(:disabled) {
+  border-color: #4c5672;
+  background: #151c2f;
+}
+
+.square:disabled {
+  cursor: default;
+}
+
+.square.win {
+  border-color: #ffd166;
+  background: #2a2230;
+  animation: winPulse 0.45s ease-in-out 2;
+}
+
+.piece {
+  font-size: clamp(2.1rem, 10vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.piece-x {
+  color: #7ec5ff;
+}
+
+.piece-o {
+  color: #ff9dcb;
+}
+
+.reset-button {
+  width: 100%;
+  border: 1px solid #445171;
+  border-radius: 0.65rem;
+  background: #1a2337;
+  color: #e8eeff;
+  padding: 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.reset-button:hover {
+  border-color: #5a6d98;
+  background: #202b43;
+}
+
+.rematch-cue {
+  margin: 0.1rem 0 0;
+  min-height: 1rem;
+  text-align: center;
+  font-size: 0.77rem;
+  letter-spacing: 0.01em;
+  color: #aebedd;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.rematch-cue.visible {
+  opacity: 1;
+  animation: cueFadeOut 1s ease forwards;
+}
+
+@keyframes winPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cueFadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  16% {
+    opacity: 0.92;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
